@@ -8,11 +8,28 @@
 <body>
 
 <input type="button" id="boton1">
+<input type="button" id="boton2">
+<input type="text" id="micuadro">
 <script>
 
-    var miboton=document.getElementById("boton1");
+    var miboton=document.getElementById("boton1"); //le damos un nombre de variable al input
+    var miboton2=document.getElementById("boton2");
+    var cuadroTexto=document.getElementById("micuadro");
 
-    miboton.style.width="250px";
+    miboton.style.width="250px"; //ancho
+    miboton.style.height="250px"; //altura
+    miboton2.style.width="250px";
+    miboton2.style.height="250px";
+
+    miboton2.focus();
+
+    cuadroTexto.style.background="red";
+    cuadroTexto.value="Escriba aqui...."; //aparece un mensaje por defecto en el input 
+    cuadroTexto.style.height="150px";
+
+
+    //miboton.style.backgroundColor="blue"; //color
+    
 
 </script>
 
