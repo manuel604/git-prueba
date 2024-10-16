@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,10 +31,11 @@
 
         document.write("<p>El ultimo elemento es <strong>");
 
-        document.write(articulos[articulos.length-1] + "</strong></p>");
-        
+        document.write(articulos[articulos.length-1] + "</strong></p>"); 
+        //si queremos acceder al ultimo elemento del array
+        //articulos.length-1 nos da la posicion del ultimo elemento
         articulos.unshift("Balón");
-
+        //El metodo "unshift" agrega un elemento al principio del array
         document.write("<p>Casi nos olvidamos!!! Agregamos este elemento: <strong>");
 
         document.write(articulos[0] + "</strong></p>");
@@ -41,7 +43,8 @@
         document.write("<p>Agregamos un elemento mas al final: <strong>");
         
         articulos.push(prompt("Introduce el articulo"));
-
+        //El metodo "push" agrega un elemento al final del array
+        //El "prompt" le pide al usuario agregar un nuevo articulo al array
         document.write(articulos[articulos.length-1] + "</strong></p>");
 
         document.write("<p>" + articulos[0] + "<br/>");
@@ -55,11 +58,11 @@
         document.write(articulos[4] + "<br/>");
         
         document.write(articulos[5] + "<br/></p>");
-
+        //Hasta acá, se muestran todos los elementos del array
         alert("Borraremos el primer elemento");
 
         articulos.shift();
-
+        //El metodo "shift" borra el primer elemento del array
         document.write("<p>" + articulos[0] + "<br/>");
 
         document.write(articulos[1] + "<br/>");
@@ -69,11 +72,11 @@
         document.write(articulos[3] + "<br/>");
 
         document.write(articulos[4] + "<br/>");
-
+        //mostramos los elementos actualizados
         alert("Ahora borraremos el último");
 
         articulos.pop();
-
+        //El metodo "pop" borra el ultimo elemento del array
         document.write("<p>" + articulos[0] + "<br/>");
 
         document.write(articulos[1] + "<br/>");
@@ -81,7 +84,7 @@
         document.write(articulos[2] + "<br/>");
 
         document.write(articulos[3] + "<br/></p>");
-
+        //mostramos los elementos actualizados
 
 
 		
@@ -95,3 +98,4 @@
 </div>
 </body>
 </html>
+-->
