@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿<!--
+<!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -46,30 +47,31 @@ table{
 <script>
 
   var cuerpo=document.getElementById("cuerpo");
-  var colorWeb=prompt("Introduce el color de fondo. azul/verde/rojo");
+  var colorWeb=prompt("Introduce el color de fondo. Azul/Verde/Rojo").toLowerCase(); //esta funcion convierte toda la palabra a minusculas
 
-  if (colorWeb=="azul") {
+  if (colorWeb!="azul" && colorWeb!="verde" && colorWeb!="rojo") {
     
-    cuerpo.style.backgroundColor="blue";
+    alert("Este color no está contemplado");
 
   }
-  else if (colorWeb=="verde"){
+  else if(colorWeb=="azul"){
 
-    cuerpo.style.backgroundColor="green";    
+    cuerpo.style.background="blue";
 
-  }
-  else if (colorWeb=="rojo"){
+  } 
+  else if(colorWeb=="verde"){
 
-    cuerpo.style.backgroundColor="red";
+    cuerpo.style.background="green";
 
   }
   else{
 
-    alert("Ese color no está contemplado");
+    cuerpo.style.backgroundColor="red";
 
-  }
+  } 
 
 </script>
 
 </body>
 </html>
+-->
