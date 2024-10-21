@@ -7,34 +7,58 @@
 <script>
 
 var num1=prompt("Introduce el 1er número: ");
-
+//alert(typeof(num1)); //Esta funcion muestra en pantalla que tipo de variable es num1
 var num2=prompt("Introduce el 2do número: ");
 
-//alert(typeof(num1)); //Esta funcion muestra en pantalla que tipo de variable es num1
+if(!isNaN(num1) && !isNaN(num2)){  
+    //isNaN esta condicion se lee = Si num1 no es un numero y num2 tampoco
+    // ! <- este operador invierte la funcion. De tal manera que cambia la condicion
+    // !isNan se lee asi = Si num1 es un numero
 
-var operacion=prompt("¿Qué operacion deseas realizar? suma/resta/división/multiplicación");
 
-if (operacion=="suma") {
+        var operacion=prompt("¿Qué operacion deseas realizar? suma/resta/división/multiplicación");
 
-    alert(parseInt(num1) + parseInt(num2)); //Esta funcion pasa la variable de tipo String a Int
+    if (operacion=="suma") {
+
+        alert(parseInt(num1) + parseInt(num2)); //Esta funcion pasa la variable de tipo String a Int
     
-}
-else if (operacion=="resta") {
+    }
+    else if (operacion=="resta") {
 
-    alert(parseInt(num1) - parseInt(num2));
+        alert(parseInt(num1) - parseInt(num2));
 
-}
-else if (operacion=="multiplicación" || operacion=="multiplicacion") {
+    }
+    else if (operacion=="multiplicación" || operacion=="multiplicacion") {
     
-    alert(parseInt(num1) * parseInt(num2));
+        alert(parseInt(num1) * parseInt(num2));
 
-}
-else if (operacion=="división" || operacion=="division") {
+    }
+    else if (operacion=="división" || operacion=="division") {
     
-    alert(parseInt(num1) / parseInt(num2));
+        alert(parseInt(num1) / parseInt(num2));
+
+    }
+    else{
+
+        alert("Operacion con contemplada");
+
+    }
 
 }
+else{
 
+    if (typeof(num1)=="string" || typeof(num2)=="string") {
+
+        alert("Debes introducir valores numericos");
+        
+    }
+    else{
+
+        alert("Ha ocurrido un error no identificado");
+
+    }
+
+}
 
 </script>
 
