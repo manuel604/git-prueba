@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>documento sin nombre</title>
+
+
+
+</head>
+<body>
+
+    <table width="25%" border="0">
+        <tr>
+            <td><label for="textfield"></label>
+                <input type="text" name="textfield" id="c_mensaje"></td>
+            <td><label for="textfield2"></label>
+            <input type="text" name="textfield2" id="c_intentos"></td>
+        </tr>
+
+    </table>
+
+    <script>
+
+        var aleatorio=Math.round(Math.random()*100); 
+        //Math.random() genera un num cualquiera entre 0 y 1 en decimal
+        //multiplicarlo por 100 nos da un número entre 0 y 100 en decimal
+        //Math.round sirve para redondear valores numericos
+    
+        var miNum, intentos;
+        miNum=0;
+        intentos=0;
+
+        var mensaje=document.getElementById("c_mensaje");
+        var intentos_consumidos=document.getElementById(c_intentos);
+    
+        do{
+            miNum=prompt("Introduce un n° entre 0 y 100");
+    
+            if(aleatorio>miNum) { //si aleatorio es mas grande que mi num 
+
+                mensaje.value="Más alto";
+
+                mensaje.style.fontSize="18px"; //aumenta el tamaño del texto
+            }
+    
+            if(aleatorio<miNum) { //si aleatorio es mas bajo que mi num
+
+                mensaje.value="Más bajo";
+
+                mensaje.style.fontSize="18px";
+
+            }
+    
+            intentos++;
+
+            intentos_consumidos.value=intentos;
+
+            intentos_consumidos.style.fontSize="18px";
+
+            intentos_consumidos.style.color="red";
+
+            intentos_consumidos.style.textAlign="center"; //centra el texto
+    
+        }while(aleatorio != miNum); //sale del bucle cuando mi num es igual al num aleatorio
+    
+        mensaje.value="Correcto!";
+
+        mensaje.style.color="red";
+    
+    
+    </script>
+
+</body>
+</html>

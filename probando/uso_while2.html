@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,29 +20,29 @@
 
     var nombre, edad, poblacion;
 
-    nombre=prompt("Introduce tu nombre por favor");
+    //nombre=prompt("Introduce tu nombre por favor");
 
-    while(!isNaN(nombre)) {
+    do{
 
         nombre=prompt("Introduce un nombre válido","Escribe aquí el nombre");
+    
+    }while(!isNaN(nombre));
 
-    }
+    //edad=prompt("Introduce tu edad por favor", "Escribe aquí la edad");
 
-    edad=prompt("Introduce tu edad por favor", "Escribe aquí la edad");
-
-        while(edad<=0 || edad>105 || isNaN(edad)) {
+        do{
 
             edad=prompt("Introduce una edad válida");
 
-        }
+        }while(edad<=0 || edad>105 || isNaN(edad));
 
-    poblacion=prompt("Introduce población", "Introduce aquí la población");
+    //poblacion=prompt("Introduce población");
 
-    while(!isNaN(poblacion)) {
+    do{
 
         poblacion=prompt("Introduce una población válida");
 
-    }
+    }while(!isNaN(poblacion));
 
 </script>
 
@@ -68,3 +69,4 @@
 
 </body>
 </html>
+-->
