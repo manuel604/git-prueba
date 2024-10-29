@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +32,7 @@
         intentos=0;
 
         var mensaje=document.getElementById("c_mensaje");
-        var intentos_consumidos=document.getElementById(c_intentos);
+        var intentos_consumidos=document.getElementById("c_intentos");
     
         do{
             miNum=prompt("Introduce un n° entre 0 y 100");
@@ -60,8 +61,10 @@
             intentos_consumidos.style.color="red";
 
             intentos_consumidos.style.textAlign="center"; //centra el texto
+            
+           
     
-        }while(aleatorio != miNum); //sale del bucle cuando mi num es igual al num aleatorio
+        } while(aleatorio != miNum); //sale del bucle cuando mi num es igual al num aleatorio
     
         mensaje.value="Correcto!";
 
@@ -72,3 +75,4 @@
 
 </body>
 </html>
+-->
