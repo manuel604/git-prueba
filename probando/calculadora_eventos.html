@@ -43,6 +43,7 @@ table{
 var cifra=""; //inicializa una var vacia tipo String. 
 var acumular=0; //var tipo entero
 var sumar=false; //var tipo booleana
+var p_operacion=true;
 var restar=false; //var tipo booleana
 
 function display_numeros(numero){ //define la funcion.
@@ -58,36 +59,54 @@ function display_numeros(numero){ //define la funcion.
 
 function suma(){
 
-  acumular=acumular+parseInt(cifra); //Suma el valor de "cifra" a la variable "acumular"
-
-  document.getElementById("display").value=acumular; //Establece el valor de "display"
-
-  cifra=""; //cifra vuelve a valer 0;
-
-  sumar=true;
-
-}
-
-function resta(){
-
-  if(sumar){
-
-      acumular=acumular+parseInt(cifra);
-      
-      document.getElementById("display").value=acumular;
-
-  }else{
+  if(restar) {
 
     acumular=acumular-parseInt(cifra);
 
     document.getElementById("display").value=acumular;
 
+  }else{
+
+    acumular=acumular+parseInt(cifra); //Suma el valor de "cifra" a la variable "acumular"
+
+    document.getElementById("display").value=acumular; //Establece el valor de "display"
+
+  }
+
+  cifra=""; //cifra vuelve a valer 0;
+  sumar=true;
+  restar=false;
+
+  p_operacion=false;
+
+}
+
+function resta(){
+
+  if(p_operacion==false){
+
+    if(sumar){
+
+      acumular=acumular+parseInt(cifra);
+      
+      document.getElementById("display").value=acumular;
+
+    }else{
+
+      acumular=acumular-parseInt(cifra);
+
+      document.getElementById("display").value=acumular;
+
+    }
+  }else{
+
+    acumular=parseInt(cifra);
+
+    p_operacion=false;
   }
 
   cifra="";
-
   sumar=false;
-
   restar=true;
 
 }
@@ -104,6 +123,10 @@ function resultado(){
     document.getElementById("display").value=acumular-parseInt(cifra);
 
   }
+
+  acumular=parseInt(document.getElementById("display").value);
+
+  cifra=0;
 
 }
 
@@ -153,5 +176,6 @@ function resultado(){
   document.getElementById("display").value=0;
 
 </script>
+
 </body>
 </html>
