@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nuevo documento</title>
+<style>
+
+.linkdestacacursos{
+    background-color: #f00;
+}
+
+a{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+table{
+    text-align: center;
+    border: none;
+}
+td{
+    border: none;
+}
+#contieneEnlaces{
+    position: absolute;
+    left: 31px;
+    top: 65px;
+    width: 400px;
+    height: 649px;
+    z-index: 1;
+    padding-top: 100px;
+}
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function() {
+
+    //$("a[href^='https://']").addClass("linkdestacacursos");
+
+    document.getElementById("cursos").addEventListener("click", resaltacursos, false);
+
+    document.getElementById("informacion").addEventListener("click", resaltarejemplos, false);
+
+});
+
+function resaltacursos() {
+    $(".ejemplos").removeClass("linkdestacacursos");//remueve el estilo de clase(en caso de que lo hubiera)
+
+    $(".cursos").addClass("linkdestacacursos");//agrega el estilo de clase a los cursos
+}
+
+function resaltarejemplos() {
+    $(".cursos").removeClass("linkdestacacursos");//remueve estilo de clase
+
+    $(".ejemplos").addClass("linkdestacacursos");//agrega estilo de clase
+}
+
+</script>
+
+
+</head>
+<body>
+
+<div id="contieneEnlaces">
+
+<a href="https://www.pildorasinformaticas.es" target="_blank" class="cursos">
+Pildoras Informaticas
+</a><br>
+
+<a href="https://www.google.com/?hl=es" target="_blank" class="ejemplos">
+Google
+</a><br>
+
+<a href="https://www.youtube.com/@pildorasinformaticas" target="_blank" class="cursos">
+Pildoras Informaticas Youtube
+</a><br>
+
+<a href="eliminar_jquery3.7.1.html" target="_blank">
+remover y reemplazar
+</a><br>
+
+<a href="https://news.google.com/home?hl=es-419&gl=AR&ceid=AR:es-419" target="_blank" class="ejemplos">
+Noticias google
+</a><br>
+
+<a href="calculadora_eventos.html" target="_blank">
+Calculadora
+</a>
+</div>
+
+<table width="100%" border="1">
+<tr>
+<td>Cursos destacados <input type="button" value="Cursos" id="cursos"></td>
+<td>Infomación adicional <input type="button" value="Infomación" id="informacion"></td>
+</tr>
+</table>
+
+</body>
+</html>
