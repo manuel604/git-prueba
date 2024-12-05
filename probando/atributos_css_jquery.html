@@ -6,9 +6,16 @@
 <style>
 
 .linkdestacacursos{
-    background-color: #f00;
+    /*background-color: #f00;*/
+    color: #f00;
+    font-weight: bold;
+    margin-left: 25px;
 }
-
+.linkdestacainfo{
+    color: rgb(231, 87, 118);
+    font-weight: bold;
+    margin-left: 25px;
+}
 a{
     display: block;
     margin-bottom: 20px;
@@ -51,12 +58,16 @@ function resaltacursos() {
     $(".ejemplos").removeClass("linkdestacacursos");//remueve el estilo de clase(en caso de que lo hubiera)
 
     $(".cursos").addClass("linkdestacacursos");//agrega el estilo de clase a los cursos
+
+    //$(".cursos").toggleClass("linkdestacacursos"); cuando usamos esta funcion junto con checkbox nos ahorramos 4 lin codigo
 }
 
 function resaltarejemplos() {
     $(".cursos").removeClass("linkdestacacursos");//remueve estilo de clase
 
     $(".ejemplos").addClass("linkdestacacursos");//agrega estilo de clase
+
+    //$(".ejemplos").toggleClass("linkdestacainfo");
 }
 
 </script>
@@ -94,8 +105,8 @@ Calculadora
 
 <table width="100%" border="1">
 <tr>
-<td>Cursos destacados <input type="button" value="Cursos" id="cursos"></td>
-<td>Infomación adicional <input type="button" value="Infomación" id="informacion"></td>
+<td>Cursos destacados <input type="radio" name="misbotones" value="Cursos" id="cursos"></td>
+<td>Infomación adicional <input type="radio" name="misbotones" value="Infomación" id="informacion"></td>
 </tr>
 </table>
 
