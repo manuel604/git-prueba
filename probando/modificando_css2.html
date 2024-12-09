@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nuevo documento</title>
+<style>
+
+    #primer_parrafo{
+        background-color: #f00;
+    }
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function() {
+
+    //$("#primer_parrafo").css("background-color", "#00f");
+
+    $("p.destacado").css("border", "2px dotted blue");
+
+});
+
+</script>
+
+
+</head>
+<body>
+<p id="primer_parrafo">Primer párrafo</p>
+<p class="destacado">Párrafo destacado</p>
+<p>Tercer párrafo</p>
+</body>
+</html>
