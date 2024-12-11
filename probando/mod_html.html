@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nuevo documento</title>
+<style>
+
+img{
+    margin: 15px;
+    width: 350px;
+    height: 200px;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    document.getElementById("img1").addEventListener("mouseover", cambiar, false);
+    document.getElementById("img1").addEventListener("mouseout", restaurar, false);
+
+});
+
+function cambiar() {
+
+    $("img").attr("src","imgs/banner.jpg");
+
+}
+
+function restaurar() {
+
+    $("img").attr("src","imgs/arbol.jpg");
+
+}
+
+</script>
+
+</head>
+<body>
+
+<img src="imgs/arbol.jpg" id="img1">
+</body>
+</html>

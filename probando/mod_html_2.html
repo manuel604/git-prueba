@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nuevo documento</title>
+<style>
+
+table{
+    text-align: center;
+    width: 50%;
+    border: none;
+    margin: auto;
+}
+img{
+    width: 350px;
+    height: 200px;
+    padding: 0 5px;
+}
+h1{
+    text-align: center;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function () {
+
+    var elementos=document.querySelectorAll("img");
+
+    for(var i=0; i<elementos.length; i++) {
+
+        elementos[i].addEventListener("mouseover", cambiar, false);
+        elementos[i].addEventListener("mouseout", restaurar, false);
+
+    }
+
+});
+
+function cambiar(e) {
+
+    if(e.target==img1) {
+
+        $("#img1").attr("src", "imgs/1920x1080.jpg");
+
+    }else if(e.target==img2) {
+
+        $("#img2").attr("src", "imgs/3840x2160.jpg");
+
+    }else if(e.target==img3) {
+
+        $("#img3").attr("src", "imgs/ROG Strix 2019_1920x1080.png");
+
+    }else if(e.target==img4) {
+
+        $("#img4").attr("src", "imgs/Zephyrus G14_1920x1080.jpg");
+
+    }
+
+}
+
+function restaurar(e) {
+
+    if(e.target==img1) {
+
+        $("#img1").attr("src", "imgs/imgs2/1920x1080.jpg");
+
+    }else if(e.target==img2) {
+
+        $("#img2").attr("src", "imgs/imgs2/3840x2160.jpg");
+
+    }else if(e.target==img3) {
+
+        $("#img3").attr("src", "imgs/imgs2/ROG Strix 2019_1920x1080.png");
+
+    }else if(e.target==img4) {
+
+        $("#img4").attr("src", "imgs/imgs2/Zephyrus G14_1920x1080.jpg");
+
+    }
+
+}
+
+</script>
+</head>
+
+<body>
+<h1>Galeria de imágenes</h1>
+<table width="100%" border="0">
+    <tr>
+        <td><img src="imgs/imgs2/1920x1080.jpg" id="img1"></td>
+        <td><img src="imgs/imgs2/3840x2160.jpg" id="img2"></td>
+        <td><img src="imgs/imgs2/ROG Strix 2019_1920x1080.png" id="img3"></td>
+        <td><img src="imgs/imgs2/Zephyrus G14_1920x1080.jpg" id="img4"></td>
+    </tr>
+</table>
+</body>
+</html>
