@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Nuevo documento</title>
+<style>
+h1{
+    text-align: center;
+}
+body{
+    background-color: #334873;
+    color: #fff;
+}
+#principal{
+    width: 60%;
+    margin: auto;
+}
+a{
+    color: #fff;
+    font: bold 20px Verdana, Geneva, sans-serif;
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function(){
+
+    $("html").dblclick(function(){
+
+        alert("Ayyyyyyy");
+
+    });
+
+    $("a").mouseover(function(){
+
+        var mensaje="<p> Estás pasando el mouse por encima del link</p>";
+
+        $("#principal").append(mensaje);
+
+    });
+
+    $("#mi_boton").click(function(){
+
+        $(this).val("Para de hacer click!!");
+
+    });
+
+    $("#el_campo").focus(function(){
+
+        $(this).val("Ahora vas a escribir");
+
+    });
+
+});
+
+</script>
+
+</head>
+<body>
+
+<div id="principal">
+
+<h1>Introduccion a eventos</h1>
+
+<p><a href="#">Un link</a></p>
+
+<form action="#" method="get">
+<fieldset><legend>Formulario</legend><p>
+    <input name="button" type="button" id="mi_boton" value="Un boton">
+</p>
+<p><input name="text-field" type="text" id="el_campo"></p></fieldset>
+</form>
+
+</div>
+
+</body>
+</html>
