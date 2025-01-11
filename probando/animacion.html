@@ -22,7 +22,7 @@
 <body>
     
 
-    <p><button>dale click aqui</button></p>
+    <p><button onclick="myMove()">dale click aqui</button></p>
 
     <div id="container">
         <div id="animate">
@@ -30,7 +30,26 @@
         </div>
     </div>
     <script>
+        const myMove = () => {
+            let id = null;
 
+            const elem = document.querySelector('#animate');
+            let pos = 0;
+            id = setInterval(frame, 6);
+
+            function frame() {
+                console.log(pos);
+                if(pos == 250){
+                    clearInterval(id);
+                }else{
+                    pos++;
+                    elem.style.top = pos + 'px';
+                    elem.style.left = pos + 'px';
+
+                }
+            }
+
+        }
 
     </script>
 
