@@ -53,11 +53,10 @@ li a{
 
 $(document).ready(function(){
 
-    //$("#submenu1").hide();
+    $("#submenu1").hide();
 
-    $("#Archivo").toggle(function(){
-        $("#submenu1").show()},
-        function(){$("#submenu1").hide()} );
+    $("#Archivo").click(function(){
+        $("#submenu1").toggle()});
 
     $("#opcion1").click(function() {
         alert("Has pulsado opcion 1");
@@ -68,7 +67,7 @@ $(document).ready(function(){
     });
 
     $("#opcion3").click(function() {
-        alert("Has pulsado opcion 2");
+        alert("Has pulsado opcion 3");
     });
     
 });
@@ -82,9 +81,9 @@ $(document).ready(function(){
 <div id="submenu1">
 
 <ul>
-    <li><a href="#">Opción 1</a></li>
-    <li><a href="#">Opción 2</a></li>
-    <li><a href="#">opción 3</a></li>
+    <li><a href="#" id="opcion1">Opción 1</a></li>
+    <li><a href="#" id="opcion2">Opción 2</a></li>
+    <li><a href="#" id="opcion3">Opción 3</a></li>
 </ul>
 
 </div>

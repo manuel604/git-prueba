@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuevo documento</title>
+</head>
+<body>
+
+    <script>
+        //var colection = [];
+
+        //colection[0] = 7;
+        //colection[1] = 'Hola mundo';
+        //colection[2] = 22;
+        //colection[3] = 'este es el indice 3 elemento 4';
+        //colection[4] = 500;
+
+        //colection.push('computer');
+        //colection.unshift('este valor ahora esta primero');
+        //colection.pop();
+        //colection.shift();
+
+        //for(elemento of colection){
+        //    document.write(elemento + '<br>');
+        //}
+
+        //const flecha = () => {
+            //document.write('este alert es de la funcion flecha');
+            //document.write('esto es un document write');
+       // };
+        //flecha();
+
+        //const flecha = () => 2;
+        //document.write(flecha());
+
+        //OBJETO JSON
+        //creamos un obj JSON
+        const obj = {   nombre: [   //creamos un array JSON
+                            {tamaño: 1.4, peso: 70, educacion: 'universitaria'},
+                            {tamaño: 1, peso: 30, educacion: 'escuela'}
+                        ],    
+                        edad: 36, 
+                        ciudad: 'new york'
+                    };
+
+        //document.write(obj.nombre[0].peso); //accede al obj JSON
+
+        const obj2 = '{"nombre":"jorge", "edad":20, "peso":60}';
+        const obj3 = JSON.parse(obj2); //pasa el string a objeto JSON
+
+        document.write(obj3.edad);
+
+    </script>
+
+</body>
+</html>
