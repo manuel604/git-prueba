@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    .lista{
+        list-style: none;
+        padding: 20px;
+        width: 300px;
+    }
+    .lista li{
+        padding: 7px 10px;
+        background: skyblue;
+        color: white;
+        border: 1px solid beige;
+        cursor: pointer;
+    }
+</style>
+
+</head>
+<body>
+
+    <ul class="lista">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+
+    <script>
+        var contenedorLista = document.querySelector(".lista");
+        var listaItem1 = document.querySelector('.lista li:nth-child(1)');
+        var listaItem2 = document.querySelector('.lista li:nth-child(2)');
+        var listaItem3 = document.querySelector('.lista li:nth-child(3)');
+        var contador = 0;
+
+        //contenedorLista.addEventListener('click', () => {
+            //setInterval(() => {
+
+                //listaItem1.innerText = contador; //innerText propiedad que agrega texto
+                //contador++;
+
+            //}, 1000)
+       // });
+
+       contenedorLista.addEventListener('click', () => {
+            let nuevoElemento = document.createElement('li');
+            nuevoElemento.innerText = 'Este es el nuevo elemento';
+            nuevoElemento.classList.add('nuevaClase');
+            nuevoElemento.id = 'nuevoid';
+            nuevoElemento.setAttribute('name', 'name');
+            //contenedorLista.insertBefore(nuevoElemento);
+            contenedorLista.insertBefore(nuevoElemento, listaItem3);
+       });
+
+    </script>
+
+</body>
+</html>
