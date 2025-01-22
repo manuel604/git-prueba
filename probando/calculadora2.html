@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input[type="button"]:hover{
+            background-color: slategray;
+            cursor: pointer;
+        }
+        input[type="button"].arit{
+            background-color: maroon;
+        }
+        input[type="button"].igual{
+            background-color: green;
+        }
+        input[type="button"].clear{
+            background-color: orangered;
+        }
+        form{
+            background-color: white;
+        }
+        input[type="text"]{
+            background-color: black;
+            border: 0px;
+            width: 250px;
+            height: 40px;
+            font-size: 20px;
+            color: white;
+            text-align: right;
+            pointer-events: none;
+        }
+        input[name="txtcaja1"]{
+            height: 20px;
+            font-size: 16px;
+        }
+        input[name="txtcaja2"]{
+            margin-bottom: 5px;
+            font-size: 26px;
+        }
+        input[type="button"]{
+            font-size: 18px;
+            font-weight: lighter;
+            font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', 'Verdana', 'sans-serif';
+            width: 60px;
+            height: 60px;
+            color: white;
+            background-color: blue;
+            margin-bottom: 5px;
+            border: 0px;
+        }
+        body{
+            background-color: rgba(227, 219, 219, 0.788);
+        }
+    </style>
+
+</head>
+<body>
+    <center>
+        <h1>Calculadora basica</h1>
+        <form name="f1">
+            <br>
+            <input type="text" name="txtcaja1">
+            <br>
+            <input type="text" name="txtcaja2" value="0">
+            <br>
+            <br>
+            <input type="button" class="clear" onclick="" value="CE">
+            <input type="button" class="clear" onclick="" value="C">
+            <input type="button" class="clear" onclick="" value="<<">
+
+            <input type="button" class="arit" onclick="" value="/">
+            <br>
+            <input type="button" onclick="escribir(this.value)" value="7">
+            <input type="button" onclick="escribir(this.value)" value="8">
+            <input type="button" onclick="escribir(this.value)" value="9">
+            <input type="button" class="arit" onclick="" value="*">
+            <br>
+            <input type="button" onclick="escribir(this.value)" value="4">
+            <input type="button" onclick="escribir(this.value)" value="5">
+            <input type="button" onclick="escribir(this.value)" value="6">
+            <input type="button" class="arit" onclick="" value="-">
+            <br>
+            <input type="button" onclick="escribir(this.value)" value="1">
+            <input type="button" onclick="escribir(this.value)" value="2">
+            <input type="button" onclick="escribir(this.value)" value="3">
+            <input type="button" class="arit" onclick="" value="+">
+            <br>
+            <input type="button" onclick="" value="√">
+            <input type="button" onclick="escribir(this.value)" value="0">
+            <input type="button" onclick="escribir(this.value)" value=".">
+            <input type="button" class="igual" onclick="" value="=">
+        </form>
+    </center>
+    
+    <script>
+        var borrar = false;
+        function escribir(n){
+            var caja2 = document.f1.txtcaja2.value;
+            if(borrar){
+                document.f1.txtcaja2.value = '';
+                borrar= false;
+                document.f1.txtcaja2.value = n;
+            }else if(caja2 == 0 && n != "."){
+                cajao = caja2.repace('0', '');
+                document.f1.txtcaja2.value = cajao + n;
+            }else{
+                document.f1.txtcaja2.value = caja2 + n;
+            }
+        }
+    </script>
+</body>
+</html>
