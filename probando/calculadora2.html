@@ -66,31 +66,31 @@
             <input type="text" name="txtcaja2" value="0">
             <br>
             <br>
-            <input type="button" class="clear" onclick="" value="CE">
-            <input type="button" class="clear" onclick="" value="C">
+            <input type="button" class="clear" onclick="document.f1.txtcaja2.value='0'" value="CE">
+            <input type="button" class="clear" onclick="document.f1.reset()" value="C">
             <input type="button" class="clear" onclick="deletecarac()" value="<<">
 
-            <input type="button" class="arit" onclick="" value="/">
+            <input type="button" class="arit" onclick="arit('/')" value="/">
             <br>
             <input type="button" onclick="escribir(this.value)" value="7">
             <input type="button" onclick="escribir(this.value)" value="8">
             <input type="button" onclick="escribir(this.value)" value="9">
-            <input type="button" class="arit" onclick="" value="*">
+            <input type="button" class="arit" onclick="arit('*')" value="*">
             <br>
             <input type="button" onclick="escribir(this.value)" value="4">
             <input type="button" onclick="escribir(this.value)" value="5">
             <input type="button" onclick="escribir(this.value)" value="6">
-            <input type="button" class="arit" onclick="" value="-">
+            <input type="button" class="arit" onclick="arit('-')" value="-">
             <br>
             <input type="button" onclick="escribir(this.value)" value="1">
             <input type="button" onclick="escribir(this.value)" value="2">
             <input type="button" onclick="escribir(this.value)" value="3">
-            <input type="button" class="arit" onclick="" value="+">
+            <input type="button" class="arit" onclick="arit('+')" value="+">
             <br>
-            <input type="button" onclick="" value="√">
+            <input type="button" onclick="raiz()" value="√">
             <input type="button" onclick="escribir(this.value)" value="0">
             <input type="button" onclick="escribir(this.value)" value=".">
-            <input type="button" class="igual" onclick="" value="=">
+            <input type="button" class="igual" onclick="calcular()" value="=">
         </form>
     </center>
     
@@ -122,6 +122,44 @@
             }else{
                 document.f1.txtcaja2.value = caja2 + n;
             }
+        }
+
+        function raiz(){
+            var caja1 = document.f1.txtcaja1.value;
+            var caja2 = document.f1.txtcaja2.value;
+            document.f1.txtcaja1.value = `Math.sqrt(${caja2+caja1})`;
+            document.f1.txtcaja2.value = '';
+        }
+
+        function arit(o){
+            var caja1 = document.f1.txtcaja1.value;
+            var caja2 = document.f1.txtcaja2.value;
+            var unum = caja1.substring(caja1.length-1);
+            calcular();
+
+            if(unum == "+" || unum == "-" || unum == "*" || unum == "/"){
+                unum = unum.replace(unum, o);
+    //param1=var/string que se reemplaza, param2=caracter dentro de ese string que se reemplaza
+                var res = caja1.substring(0, caja1.length-1);
+                document.f1.caja1.value = res + unum;
+            }
+            if(caja1 == "" && caja2 != ""){
+                document.f1.txtcaja1.value = caja2 + o;
+            }else{
+                document.f1.txtcaja1.value = caja1 + caja2 + o;
+            }
+
+            borrar = true;
+        }
+
+        function calcular(){
+            var caja1 = document.f1.txtcaja1.value;
+            var caja2 = document.f1.txtcaja2.value;
+            document.f1.txtcaja2.value = eval(caja1 + caja2);
+            document.f1.txtcaja1.value = "";
+            borrar = true;
+            bloqdel = true;
+
         }
     </script>
 </body>
